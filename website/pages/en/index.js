@@ -63,7 +63,7 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href={docUrl('doc1.html')}>Read Docs</Button>
+            <Button href={docUrl('intro.html')}>Read Docs</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -82,7 +82,7 @@ class Index extends React.Component {
         id={props.id}
         background={props.background}>
         <GridBlock
-          align="center"
+          align="left"
           contents={props.children}
           layout={props.layout}
         />
