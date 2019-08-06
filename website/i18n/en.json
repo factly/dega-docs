@@ -3,12 +3,8 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A website for testing",
+    "tagline": "Open source platform for publishing fact checks",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
-      },
       "doc2": {
         "title": "document number 2"
       },
@@ -20,16 +16,18 @@
       },
       "doc5": {
         "title": "Fifth Document"
+      },
+      "intro": {
+        "title": "Dega at a Glance",
+        "sidebar_label": "Dega at a Glance"
       }
     },
     "links": {
       "Docs": "Docs",
-      "API": "API",
-      "Help": "Help",
-      "Blog": "Blog"
+      "API": "API"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
+      "Introduction": "Introduction",
       "First Category": "First Category",
       "Second Category": "Second Category"
     }

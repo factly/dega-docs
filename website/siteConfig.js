@@ -38,9 +38,8 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
+    {doc: 'intro', label: 'Docs'},
     {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
   ],
 
   // If you have users set above, you add it here:
@@ -86,6 +85,8 @@ const siteConfig = {
   onPageNav: 'separate',
   // No .html extensions for paths.
   cleanUrl: true,
+
+  editUrl: "https://github.com/factly/dega-docs/tree/md/docs/",
 
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
