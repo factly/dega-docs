@@ -28,12 +28,6 @@ class HomeSplash extends React.Component {
       </div>
     );
 
-    const Logo = props => (
-      <div className="projectLogo">
-        <img src={props.img_src} alt="Project Logo" />
-      </div>
-    );
-
     const ProjectTitle = () => (
       <h2 className="projectTitle">
         {siteConfig.title}
@@ -59,7 +53,6 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/dega.svg`} />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
@@ -210,25 +203,6 @@ class Index extends React.Component {
             image: `${baseUrl}img/undraw_server_status_5pbv.svg`,
             imageAlign: 'left',
             title: 'Rest API',
-          },
-        ]}
-      </Block>
-    );
-
-    const Features = () => (
-      <Block layout="fourColumn">
-        {[
-          {
-            content: 'This is the content of my feature',
-            image: `${baseUrl}img/undraw_react.svg`,
-            imageAlign: 'top',
-            title: 'Feature One',
-          },
-          {
-            content: 'The content of my second feature',
-            image: `${baseUrl}img/undraw_operating_system.svg`,
-            imageAlign: 'top',
-            title: 'Feature Two',
           },
         ]}
       </Block>
