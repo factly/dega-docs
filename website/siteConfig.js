@@ -9,7 +9,7 @@
 // site configuration options.
 
 // List of projects/orgs using your project for the users page.
-const users = [
+/*const users = [
   {
     caption: 'User1',
     // You will need to prepend the image path with your baseUrl
@@ -18,7 +18,7 @@ const users = [
     infoLink: 'https://www.facebook.com',
     pinned: true,
   },
-];
+];*/
 
 const siteConfig = {
   title: 'Dega', // Title for your website.
@@ -43,7 +43,7 @@ const siteConfig = {
   ],
 
   // If you have users set above, you add it here:
-  users,
+  //users,
 
   /* path to images for header/footer */
   headerIcon: 'img/dega.svg',
