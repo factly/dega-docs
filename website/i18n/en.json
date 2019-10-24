@@ -5,11 +5,23 @@
     "previous": "Previous",
     "tagline": "Open source platform for publishing fact checks",
     "docs": {
-      "doc2": {
-        "title": "document number 2"
+      "api": {
+        "title": "Intro"
       },
-      "doc3": {
+      "category": {
+        "title": "Categories"
+      },
+      "claimant": {
+        "title": "Claimants"
+      },
+      "claim": {
+        "title": "Claims"
+      },
+      "doc2": {
         "title": "This is document number 3"
+      },
+      "error": {
+        "title": "Status codes"
       },
       "doc4": {
         "title": "Other Document"
@@ -17,9 +29,39 @@
       "doc5": {
         "title": "Fifth Document"
       },
+      "factcheck": {
+        "title": "Factchecks"
+      },
+      "format": {
+        "title": "Formats"
+      },
       "intro": {
         "title": "Dega at a Glance",
         "sidebar_label": "Dega at a Glance"
+      },
+      "organization": {
+        "title": "Organizations"
+      },
+      "post": {
+        "title": "Posts"
+      },
+      "rating": {
+        "title": "Ratings"
+      },
+      "role": {
+        "title": "Roles"
+      },
+      "sitemap": {
+        "title": "Sitemaps"
+      },
+      "status": {
+        "title": "Statuses"
+      },
+      "tag": {
+        "title": "Tags"
+      },
+      "user": {
+        "title": "Users"
       }
     },
     "links": {
@@ -28,7 +70,9 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "First Category": "First Category"
+      "Intro": "Intro",
+      "Endpoints": "Endpoints",
+      "Errors": "Errors"
     }
   },
   "pages-strings": {
