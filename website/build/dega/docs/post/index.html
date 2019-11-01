@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Posts · Dega</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Get posts"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Posts · Dega"/><meta property="og:type" content="website"/><meta property="og:url" content="https://factly.in/"/><meta property="og:description" content="## Get posts"/><meta property="og:image" content="https://factly.in/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://factly.in/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/dega.svg" alt="Dega"/><h2 class="headerTitleWithLogo">Dega</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/intro" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/api" target="_self">API</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Endpoints</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Intro</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/api">Intro</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Endpoints</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/category">Categories</a></li><li class="navListItem"><a class="navItem" href="/docs/claimant">Claimants</a></li><li class="navListItem"><a class="navItem" href="/docs/claim">Claims</a></li><li class="navListItem"><a class="navItem" href="/docs/factcheck">Factchecks</a></li><li class="navListItem"><a class="navItem" href="/docs/format">Formats</a></li><li class="navListItem"><a class="navItem" href="/docs/organization">Organizations</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/post">Posts</a></li><li class="navListItem"><a class="navItem" href="/docs/rating">Ratings</a></li><li class="navListItem"><a class="navItem" href="/docs/role">Roles</a></li><li class="navListItem"><a class="navItem" href="/docs/sitemap">Sitemaps</a></li><li class="navListItem"><a class="navItem" href="/docs/status">Statuses</a></li><li class="navListItem"><a class="navItem" href="/docs/tag">Tags</a></li><li class="navListItem"><a class="navItem" href="/docs/user">Users</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Errors</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/error">Status codes</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/factly/dega-docs/tree/md/docs/posts.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Posts</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="get-posts"></a><a href="#get-posts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get posts</h2>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/posts</code></span></p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"data"</span>: [
+        {
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"What is the status of Forest fires in India?"</span>,
+            <span class="hljs-string">"content"</span>: <span class="hljs-string">"content ..."</span>,
+            <span class="hljs-string">"excerpt"</span>: <span class="hljs-string">"what is the status of forest fires in India? Here is a detailed analysis."</span>,
+            <span class="hljs-string">"featured"</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">"sticky"</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">"updates"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"slug"</span>: <span class="hljs-string">"what-is-status-of-forest-fires-in-india"</span>,
+            <span class="hljs-string">"tags"</span>: [
+                {
+                    <span class="hljs-string">"id"</span> : <span class="hljs-string">"5c38f509569ed47e00c7004a"</span>,
+                    <span class="hljs-string">"name"</span> : <span class="hljs-string">"Forests"</span>,
+                    <span class="hljs-string">"slug"</span> : <span class="hljs-string">"forests"</span>,
+                    <span class="hljs-string">"clientId"</span> : <span class="hljs-string">"factly"</span>,
+                    <span class="hljs-string">"createdDate"</span> : <span class="hljs-string">"2019-01-11T19:56:57.619Z"</span>,
+                    <span class="hljs-string">"lastUpdatedDate"</span> : <span class="hljs-string">"2019-01-11T19:56:57.619Z"</span>,
+                    <span class="hljs-string">"class"</span> : <span class="hljs-string">"com.factly.dega.domain.Tag"</span>
+                }
+            ],
+            <span class="hljs-string">"categories"</span>: [
+                {
+                    <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5d79818bbf1bce0001eda4e2"</span>,
+                    <span class="hljs-string">"name"</span>: <span class="hljs-string">"India"</span>,
+                    <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"india"</span>,
+                    <span class="hljs-string">"parent"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                    <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T23:21:47.651Z"</span>,
+                    <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T23:21:47.651Z"</span>
+                },
+                {
+                    <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5d798196bf1bce0001eda4e6"</span>,
+                    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Stories"</span>,
+                    <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"stories"</span>,
+                    <span class="hljs-string">"parent"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                    <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T23:21:58.886Z"</span>,
+                    <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T23:21:58.886Z"</span>
+                }
+            ],
+            <span class="hljs-string">"status"</span>: {
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">"Publish"</span>,
+                <span class="hljs-string">"slug"</span>: <span class="hljs-string">"publish"</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d791093e5c62900019d7856"</span>,
+                <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Status"</span>,
+                <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"default"</span>,
+                <span class="hljs-string">"isDefault"</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T15:19:47.348Z"</span>,
+                <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T15:19:47.348Z"</span>
+            },
+            <span class="hljs-string">"format"</span>: {
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">"Standard"</span>,
+                <span class="hljs-string">"slug"</span>: <span class="hljs-string">"standard"</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d791062e5c62900019d784d"</span>,
+                <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Format"</span>,
+                <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"default"</span>,
+                <span class="hljs-string">"isDefault"</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T15:18:58.839Z"</span>,
+                <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T15:18:58.839Z"</span>
+            },
+            <span class="hljs-string">"media"</span>: {
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/dega-content/factly.jpg"</span>,
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/jpeg"</span>,
+                <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/dega-content/factly.jpg"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">"Forest-fires-in-India_Featured-Image"</span>,
+                <span class="hljs-string">"slug"</span>: <span class="hljs-string">"forest-fires-in-india_featured-image"</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d799417bf1bce0001eda53a"</span>,
+                <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+                <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"82118"</span>,
+                <span class="hljs-string">"altText"</span>: <span class="hljs-string">"Forest-fires-in-India_Featured-Image"</span>,
+                <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+                <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-12T00:40:00.000Z"</span>,
+                <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-12T00:41:00.106Z"</span>,
+                <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-12T00:40:00.000Z"</span>,
+                <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"dega-content/factly/2019/9/1568248855198-forest-fires-in-india_featured-image.jpg"</span>,
+                <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/dega-content/factly.jpg"</span>
+            },
+            <span class="hljs-string">"users"</span>: [
+                {
+                    <span class="hljs-string">"description"</span>: <span class="hljs-string">"Shashi was always intrigued ...."</span>,
+                    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"shashi-deshetti"</span>,
+                    <span class="hljs-string">"enabled"</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">"email"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+                    <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d792589bf1bce0001eda484"</span>,
+                    <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.DegaUser"</span>,
+                    <span class="hljs-string">"firstName"</span>: <span class="hljs-string">"Shashi Kiran"</span>,
+                    <span class="hljs-string">"lastName"</span>: <span class="hljs-string">"Deshetti"</span>,
+                    <span class="hljs-string">"displayName"</span>: <span class="hljs-string">"Shashi Deshetti"</span>,
+                    <span class="hljs-string">"facebookURL"</span>: <span class="hljs-literal">null</span>,
+                    <span class="hljs-string">"twitterURL"</span>: <span class="hljs-literal">null</span>,
+                    <span class="hljs-string">"instagramURL"</span>: <span class="hljs-literal">null</span>,
+                    <span class="hljs-string">"linkedinURL"</span>: <span class="hljs-literal">null</span>,
+                    <span class="hljs-string">"githubURL"</span>: <span class="hljs-literal">null</span>,
+                    <span class="hljs-string">"profilePicture"</span>: <span class="hljs-literal">null</span>,
+                    <span class="hljs-string">"emailVerified"</span>: <span class="hljs-literal">true</span>,
+                    <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T16:49:00.000Z"</span>,
+                    <span class="hljs-string">"media"</span>: {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/dega-content/factly.jpg"</span>,
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/jpeg"</span>,
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/dega-content/factly.jpg"</span>,
+                        <span class="hljs-string">"title"</span>: <span class="hljs-string">"shashi-deshetti"</span>,
+                        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"shashi-deshetti1"</span>,
+                        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d93ebd993ace2000112a94d"</span>,
+                        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+                        <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"235088"</span>,
+                        <span class="hljs-string">"altText"</span>: <span class="hljs-string">"shashi-deshetti"</span>,
+                        <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+                        <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-10-02T00:14:17.711Z"</span>,
+                        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-10-02T00:14:17.711Z"</span>,
+                        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-10-02T00:14:17.711Z"</span>,
+                        <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"dega-content/factly.jpg"</span>,
+                        <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/dega-content/factly.jpg"</span>
+                    }
+                }
+            ],
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d798341bf1bce0001eda510"</span>,
+            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Post"</span>,
+            <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+            <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:30:29.834Z"</span>,
+            <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-28T13:30:29.834Z"</span>,
+            <span class="hljs-string">"subTitle"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T23:29:05.140Z"</span>
+        },
+        {
+            ...
+        },
+        ...
+    ],
+    <span class="hljs-string">"paging"</span>: {
+        <span class="hljs-string">"next"</span>: <span class="hljs-string">"eyIkdW5kZWZpbmVkIjp0cnVlfQ"</span>,
+        <span class="hljs-string">"hasNext"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"previous"</span>: <span class="hljs-string">"eyIkdW5kZWZpbmVkIjp0cnVlfQ"</span>,
+        <span class="hljs-string">"hasPrevious"</span>: <span class="hljs-literal">false</span>
+    } 
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="query-parameters"></a><a href="#query-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Parameters</h3>
+<table>
+<thead>
+<tr><th><strong>params</strong></th><th><strong>value</strong></th><th><strong>description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>id</td><td>Object Id</td><td>To get post by object id</td></tr>
+<tr><td>slug</td><td>string</td><td>To get post by slug</td></tr>
+<tr><td>category</td><td>string</td><td>To get posts of a category</td></tr>
+<tr><td>tag</td><td>string</td><td>To get posts of a tag</td></tr>
+<tr><td>user</td><td>string</td><td>To get posts of a particular user</td></tr>
+<tr><td>limit</td><td>number</td><td>To limit number of posts</td></tr>
+<tr><td>next</td><td>string</td><td>To get next posts</td></tr>
+<tr><td>previous</td><td>string</td><td>To get previous posts</td></tr>
+<tr><td>sortBy</td><td>string</td><td>To sort by field</td></tr>
+<tr><td>sortAsc</td><td>boolean</td><td>To set sort by ascending</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="get-post"></a><a href="#get-post" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get post</h2>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/posts/:key</code></span></p>
+<h3><a class="anchor" aria-hidden="true" id="path-parameters"></a><a href="#path-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Path parameters</h3>
+<table>
+<thead>
+<tr><th><strong>params</strong></th><th><strong>description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>key</td><td>To get post by Object Id or slug</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="get-a-by-object-id"></a><a href="#get-a-by-object-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get a  by Object Id</h3>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/posts/$postId</code></span></p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"data"</span> : {
+        <span class="hljs-string">"title"</span>: <span class="hljs-string">"What is the status of Forest fires in India?"</span>,
+        <span class="hljs-string">"content"</span>: <span class="hljs-string">"&lt;p&gt; content ...&lt;/p&gt;"</span>,
+        <span class="hljs-string">"excerpt"</span>: <span class="hljs-string">"Ever since the images &amp; reports of Amazon forest fires came to light..."</span>,
+        <span class="hljs-string">"featured"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"sticky"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"updates"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"what-is-status-of-forest-fires-in-india"</span>,
+        <span class="hljs-string">"tags"</span>: [],
+        <span class="hljs-string">"categories"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"status"</span>: {
+            ...
+        },
+        <span class="hljs-string">"format"</span>: {
+            ...
+        },
+        <span class="hljs-string">"media"</span>: {
+            ....
+        },
+        <span class="hljs-string">"users"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d798341bf1bce0001eda510"</span>,
+        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Post"</span>,
+        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+        <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:30:29.834Z"</span>,
+        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-28T13:30:29.834Z"</span>,
+        <span class="hljs-string">"subTitle"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T23:29:05.140Z"</span>
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-a-claim-by-slug"></a><a href="#get-a-claim-by-slug" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get a claim by slug</h3>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/posts/$postSlug</code> </span></p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"data"</span> : {
+        <span class="hljs-string">"title"</span>: <span class="hljs-string">"What is the status of Forest fires in India?"</span>,
+        <span class="hljs-string">"content"</span>: <span class="hljs-string">"&lt;p&gt; content ...&lt;/p&gt;"</span>,
+        <span class="hljs-string">"excerpt"</span>: <span class="hljs-string">"Ever since the images &amp; reports of Amazon forest fires came to light..."</span>,
+        <span class="hljs-string">"featured"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"sticky"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"updates"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"what-is-status-of-forest-fires-in-india"</span>,
+        <span class="hljs-string">"tags"</span>: [],
+        <span class="hljs-string">"categories"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"status"</span>: {
+            ...
+        },
+        <span class="hljs-string">"format"</span>: {
+            ...
+        },
+        <span class="hljs-string">"media"</span>: {
+            ....
+        },
+        <span class="hljs-string">"users"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d798341bf1bce0001eda510"</span>,
+        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Post"</span>,
+        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+        <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:30:29.834Z"</span>,
+        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-28T13:30:29.834Z"</span>,
+        <span class="hljs-string">"subTitle"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T23:29:05.140Z"</span>
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/organization"><span class="arrow-prev">← </span><span>Organizations</span></a><a class="docs-next button" href="/docs/rating"><span>Ratings</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#get-posts">Get posts</a><ul class="toc-headings"><li><a href="#query-parameters">Query Parameters</a></li></ul></li><li><a href="#get-post">Get post</a><ul class="toc-headings"><li><a href="#path-parameters">Path parameters</a></li><li><a href="#get-a-by-object-id">Get a  by Object Id</a></li><li><a href="#get-a-claim-by-slug">Get a claim by slug</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/dega.svg" alt="Dega" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a></div></section><section class="copyright">Copyright © 2019 Factly</section></footer></div></body></html>

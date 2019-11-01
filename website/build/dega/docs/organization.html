@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Organizations · Dega</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Get organization"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Organizations · Dega"/><meta property="og:type" content="website"/><meta property="og:url" content="https://factly.in/"/><meta property="og:description" content="## Get organization"/><meta property="og:image" content="https://factly.in/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://factly.in/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/dega.svg" alt="Dega"/><h2 class="headerTitleWithLogo">Dega</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/intro" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/api" target="_self">API</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Endpoints</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Intro</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/api">Intro</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Endpoints</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/category">Categories</a></li><li class="navListItem"><a class="navItem" href="/docs/claimant">Claimants</a></li><li class="navListItem"><a class="navItem" href="/docs/claim">Claims</a></li><li class="navListItem"><a class="navItem" href="/docs/factcheck">Factchecks</a></li><li class="navListItem"><a class="navItem" href="/docs/format">Formats</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/organization">Organizations</a></li><li class="navListItem"><a class="navItem" href="/docs/post">Posts</a></li><li class="navListItem"><a class="navItem" href="/docs/rating">Ratings</a></li><li class="navListItem"><a class="navItem" href="/docs/role">Roles</a></li><li class="navListItem"><a class="navItem" href="/docs/sitemap">Sitemaps</a></li><li class="navListItem"><a class="navItem" href="/docs/status">Statuses</a></li><li class="navListItem"><a class="navItem" href="/docs/tag">Tags</a></li><li class="navListItem"><a class="navItem" href="/docs/user">Users</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Errors</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/error">Status codes</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/factly/dega-docs/tree/md/docs/organizations.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Organizations</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="get-organization"></a><a href="#get-organization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get organization</h2>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/organizations</code></span></p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"data"</span> :  {
+        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Factly"</span>,
+        <span class="hljs-string">"description"</span>: <span class="hljs-string">"FACTLY is one of the well known Data Journalism/Public Information portals in India...."</span>,
+        <span class="hljs-string">"email"</span>: <span class="hljs-string">"admin@factly.in"</span>,
+        <span class="hljs-string">"mediaLogo"</span>: {
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/png"</span>,
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"factly-logo-transparent-218x60"</span>,
+            <span class="hljs-string">"slug"</span>: <span class="hljs-string">"factly-logo-transparent-218x60"</span>,
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8d1fe9bf1bce0001268ca1"</span>,
+            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+            <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"4380"</span>,
+            <span class="hljs-string">"altText"</span>: <span class="hljs-string">"factly-logo-transparent-218x60"</span>,
+            <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+            <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-26T20:30:33.409Z"</span>,
+            <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-26T20:30:33.409Z"</span>,
+            <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+            <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-26T20:30:33.409Z"</span>,
+            <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"/factly.png"</span>,
+            <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>
+        },
+        <span class="hljs-string">"mediaMobileLogo"</span>: {
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/png"</span>,
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"factly-logo-transparent-218x60"</span>,
+            <span class="hljs-string">"slug"</span>: <span class="hljs-string">"factly-logo-transparent-218x60"</span>,
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8d1fe9bf1bce0001268ca1"</span>,
+            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+            <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"4380"</span>,
+            <span class="hljs-string">"altText"</span>: <span class="hljs-string">"factly-logo-transparent-218x60"</span>,
+            <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+            <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-26T20:30:33.409Z"</span>,
+            <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-26T20:30:33.409Z"</span>,
+            <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+            <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-26T20:30:33.409Z"</span>,
+            <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"/factly.png"</span>,
+            <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>
+        },
+        <span class="hljs-string">"mediaFavicon"</span>: {
+            <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+            <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/png"</span>,
+            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"favicon-transparent-64x64"</span>,
+            <span class="hljs-string">"slug"</span>: <span class="hljs-string">"favicon-transparent-64x64"</span>,
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8d2311bf1bce0001268cc5"</span>,
+            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+            <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"1664"</span>,
+            <span class="hljs-string">"altText"</span>: <span class="hljs-string">"favicon-transparent-64x64"</span>,
+            <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+            <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-26T20:44:01.889Z"</span>,
+            <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-26T20:44:01.889Z"</span>,
+            <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+            <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-26T20:44:01.889Z"</span>,
+            <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"/factly.png"</span>,
+            <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>
+        },
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d792544bf1bce0001eda477"</span>,
+        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Organization"</span>,
+        <span class="hljs-string">"siteTitle"</span>: <span class="hljs-string">"Factly"</span>,
+        <span class="hljs-string">"tagLine"</span>: <span class="hljs-string">"Making Public Data Meaningful"</span>,
+        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T16:48:00.000Z"</span>,
+        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-26T20:44:36.458Z"</span>,
+        <span class="hljs-string">"siteAddress"</span>: <span class="hljs-string">"https://factcheck.factly.in"</span>
+    }
+}</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/format"><span class="arrow-prev">← </span><span>Formats</span></a><a class="docs-next button" href="/docs/post"><span>Posts</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#get-organization">Get organization</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/dega.svg" alt="Dega" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a></div></section><section class="copyright">Copyright © 2019 Factly</section></footer></div></body></html>

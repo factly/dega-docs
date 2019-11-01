@@ -17,17 +17,8 @@
       "claim": {
         "title": "Claims"
       },
-      "doc2": {
-        "title": "This is document number 3"
-      },
       "error": {
         "title": "Status codes"
-      },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
       },
       "factcheck": {
         "title": "Factchecks"
