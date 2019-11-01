@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Factchecks · Dega</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Get factchecks"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Factchecks · Dega"/><meta property="og:type" content="website"/><meta property="og:url" content="https://factly.github.io/dega-docs/"/><meta property="og:description" content="## Get factchecks"/><meta property="og:image" content="https://factly.github.io/dega-docs/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://factly.github.io/dega-docs/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/dega-docs/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/dega-docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/dega-docs/css/main.css"/><script src="/dega-docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/dega-docs/"><img class="logo" src="/dega-docs/img/dega.svg" alt="Dega"/><h2 class="headerTitleWithLogo">Dega</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/dega-docs/docs/intro" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/dega-docs/docs/api" target="_self">API</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Endpoints</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Intro</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dega-docs/docs/api">Intro</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Endpoints</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dega-docs/docs/category">Categories</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/claimant">Claimants</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/claim">Claims</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/dega-docs/docs/factcheck">Factchecks</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/format">Formats</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/organization">Organizations</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/post">Posts</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/rating">Ratings</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/role">Roles</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/sitemap">Sitemaps</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/status">Statuses</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/tag">Tags</a></li><li class="navListItem"><a class="navItem" href="/dega-docs/docs/user">Users</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Errors</h3><ul class=""><li class="navListItem"><a class="navItem" href="/dega-docs/docs/error">Status codes</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/factly/dega-docs/tree/md/docs/factchecks.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">Factchecks</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="get-factchecks"></a><a href="#get-factchecks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get factchecks</h2>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/factchecks</code></span></p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"data"</span>: [
+        {
+            <span class="hljs-string">"title"</span>: <span class="hljs-string">"Fact Check: How true is Congress party’s claim ?"</span>,
+            <span class="hljs-string">"introduction"</span>: <span class="hljs-string">"&lt;p&gt;introduction&lt;/p&gt;"</span>,
+            <span class="hljs-string">"summary"</span>: <span class="hljs-string">"&lt;p&gt; &lt;/p&gt;"</span>,
+            <span class="hljs-string">"excerpt"</span>: <span class="hljs-string">"Recently, Congress Party has claimed that there is a shortfall in government earnings in 2018-19."</span>,
+            <span class="hljs-string">"featured"</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">"sticky"</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">"updates"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"slug"</span>: <span class="hljs-string">"factcheck-how-true-is-congress-party-claim-regarding-shortfall-in-government-earnings﻿"</span>,
+            <span class="hljs-string">"claims"</span>: [
+                {
+                    <span class="hljs-string">"claim"</span>: <span class="hljs-string">"There was a shortfall in government earnings in 2018-19."</span>,
+                    <span class="hljs-string">"description"</span>: <span class="hljs-string">"&lt;p&gt;Description&lt;/p&gt;"</span>,
+                    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"there-was-a-shortfall-in-government-earnings-in-2018-19"</span>,
+                    <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8f5d53f4f39f0001e419ec"</span>,
+                    <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Claim"</span>,
+                    <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                    <span class="hljs-string">"claimDate"</span>: <span class="hljs-string">"2019-09-19T00:00:00.000Z"</span>,
+                    <span class="hljs-string">"claimSource"</span>: <span class="hljs-string">"https://twitter.com/INCIndia/status/1175386695757230080"</span>,
+                    <span class="hljs-string">"checkedDate"</span>: <span class="hljs-string">"2019-09-27T00:00:00.000Z"</span>,
+                    <span class="hljs-string">"reviewSources"</span>: <span class="hljs-string">"https://www.indiabudget.gov.in/economicsurvey/"</span>,
+                    <span class="hljs-string">"review"</span>: <span class="hljs-string">"&lt;p&gt;MISLEADING.&lt;/p&gt;"</span>,
+                    <span class="hljs-string">"reviewTagLine"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-28T13:17:07.009Z"</span>,
+                    <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-28T14:54:44.449Z"</span>,
+                    <span class="hljs-string">"rating"</span>: {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">"True"</span>,
+                        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"true"</span>,
+                        <span class="hljs-string">"description"</span>: <span class="hljs-string">"This is the description fo True rating"</span>,
+                        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d791140e10bf00001fad893"</span>,
+                        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Rating"</span>,
+                        <span class="hljs-string">"numericValue"</span>: <span class="hljs-number">5</span>,
+                        <span class="hljs-string">"isDefault"</span>: <span class="hljs-literal">true</span>,
+                        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"default"</span>,
+                        <span class="hljs-string">"media"</span>: {
+                            <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/png"</span>,
+                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+                            <span class="hljs-string">"title"</span>: <span class="hljs-string">"true"</span>,
+                            <span class="hljs-string">"slug"</span>: <span class="hljs-string">"true"</span>,
+                            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d792f14bf1bce0001eda499"</span>,
+                            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+                            <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"14323"</span>,
+                            <span class="hljs-string">"altText"</span>: <span class="hljs-string">"true"</span>,
+                            <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+                            <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-11T17:29:00.000Z"</span>,
+                            <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T17:30:18.924Z"</span>,
+                            <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                            <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T17:29:00.000Z"</span>,
+                            <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"/factly.png"</span>,
+                            <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>
+                        },
+                        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T15:22:00.000Z"</span>,
+                        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-12T04:38:43.403Z"</span>
+                    },
+                    <span class="hljs-string">"claimant"</span>: {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Government of India"</span>,
+                        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"government-of-india"</span>,
+                        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8f5c68f4f39f0001e419e9"</span>,
+                        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Claimant"</span>,
+                        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                        <span class="hljs-string">"media"</span>: {
+                            <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+                            <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/png"</span>,
+                            <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.png"</span>,
+                            <span class="hljs-string">"title"</span>: <span class="hljs-string">"government-of-india"</span>,
+                            <span class="hljs-string">"slug"</span>: <span class="hljs-string">"government-of-india1"</span>,
+                            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8f5ce993ace2000112a8c6"</span>,
+                            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+                            <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"112448"</span>,
+                            <span class="hljs-string">"altText"</span>: <span class="hljs-string">"government-of-india"</span>,
+                            <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+                            <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:15:21.348Z"</span>,
+                            <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-28T13:15:21.348Z"</span>,
+                            <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                            <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-28T13:15:21.348Z"</span>,
+                            <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"/factly.png"</span>,
+                            <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>
+                        },
+                        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-28T13:13:00.000Z"</span>,
+                        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-28T13:15:28.083Z"</span>
+                    }
+                }
+            ],
+            <span class="hljs-string">"tags"</span>: [],
+            <span class="hljs-string">"categories"</span>: [
+                {
+                    <span class="hljs-string">"name"</span>: <span class="hljs-string">"India"</span>,
+                    <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"india"</span>,
+                    <span class="hljs-string">"parent"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d79818bbf1bce0001eda4e2"</span>,
+                    <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Category"</span>,
+                    <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                    <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T23:21:47.651Z"</span>,
+                    <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T23:21:47.651Z"</span>
+                },
+                {
+                    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Stories"</span>,
+                    <span class="hljs-string">"description"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"stories"</span>,
+                    <span class="hljs-string">"parent"</span>: <span class="hljs-string">""</span>,
+                    <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d798196bf1bce0001eda4e6"</span>,
+                    <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Category"</span>,
+                    <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                    <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T23:21:58.886Z"</span>,
+                    <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T23:21:58.886Z"</span>
+                }
+            ],
+            <span class="hljs-string">"status"</span>: {
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">"Publish"</span>,
+                <span class="hljs-string">"slug"</span>: <span class="hljs-string">"publish"</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d791093e5c62900019d7856"</span>,
+                <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Status"</span>,
+                <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"default"</span>,
+                <span class="hljs-string">"isDefault"</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-11T15:19:47.348Z"</span>,
+                <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-11T15:19:47.348Z"</span>
+            },
+            <span class="hljs-string">"media"</span>: {
+                <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.jpg"</span>,
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/jpeg"</span>,
+                <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.jpg"</span>,
+                <span class="hljs-string">"title"</span>: <span class="hljs-string">"shortfall-in-government-earnings_Featured-Image"</span>,
+                <span class="hljs-string">"slug"</span>: <span class="hljs-string">"shortfall-in-government-earnings_featured-image"</span>,
+                <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8f5e3093ace2000112a8d4"</span>,
+                <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+                <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"62885"</span>,
+                <span class="hljs-string">"altText"</span>: <span class="hljs-string">"shortfall-in-government-earnings_Featured-Image"</span>,
+                <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+                <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:20:48.654Z"</span>,
+                <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-09-28T13:20:48.654Z"</span>,
+                <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-28T13:20:48.654Z"</span>,
+                <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"/factly.jpg"</span>,
+                <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/factly.jpg"</span>
+            },
+            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8f5e38f4f39f0001e419f0"</span>,
+            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Factcheck"</span>,
+            <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+            <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:20:56.676Z"</span>,
+            <span class="hljs-string">"subTitle"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-28T13:20:56.676Z"</span>,
+            <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-10-14T10:43:31.594Z"</span>,
+            <span class="hljs-string">"users"</span>: [
+                {
+                    <span class="hljs-string">"description"</span>: <span class="hljs-string">"Rakesh closely watched the 'Jan Satyagraha' ...."</span>,
+                    <span class="hljs-string">"slug"</span>: <span class="hljs-string">"rakesh-dubbudu"</span>,
+                    <span class="hljs-string">"email"</span>: <span class="hljs-string">"rakesh@factly.in"</span>,
+                    <span class="hljs-string">"roleMappings"</span>: [
+                        {
+                            <span class="hljs-string">"name"</span>: <span class="hljs-string">"Factly - Administrator"</span>,
+                            <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d792544bf1bce0001eda478"</span>,
+                            <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.RoleMapping"</span>
+                        }
+                    ],
+                    <span class="hljs-string">"media"</span>: {
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.jpg"</span>,
+                        <span class="hljs-string">"type"</span>: <span class="hljs-string">"image/jpeg"</span>,
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://storage.degacms.com/factly.jpg"</span>,
+                        <span class="hljs-string">"title"</span>: <span class="hljs-string">"rakesh-dubbudu"</span>,
+                        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"rakesh-dubbudu1"</span>,
+                        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d93ebc177b1b80001d57232"</span>,
+                        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Media"</span>,
+                        <span class="hljs-string">"fileSize"</span>: <span class="hljs-string">"25875"</span>,
+                        <span class="hljs-string">"altText"</span>: <span class="hljs-string">"rakesh-dubbudu"</span>,
+                        <span class="hljs-string">"uploadedBy"</span>: <span class="hljs-string">"shashi@factly.in"</span>,
+                        <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-10-02T00:13:52.984Z"</span>,
+                        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-10-02T00:13:52.984Z"</span>,
+                        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+                        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-10-02T00:13:52.984Z"</span>,
+                        <span class="hljs-string">"relativeURL"</span>: <span class="hljs-string">"/factly.jpg"</span>,
+                        <span class="hljs-string">"sourceURL"</span>: <span class="hljs-string">"https://images.degacms.com/factly.jpg"</span>
+                    },
+                    <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d79d0bebf1bce0001eda5e1"</span>,
+                    <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.DegaUser"</span>,
+                    <span class="hljs-string">"firstName"</span>: <span class="hljs-string">"Rakesh"</span>,
+                    <span class="hljs-string">"lastName"</span>: <span class="hljs-string">"Dubbudu"</span>,
+                    <span class="hljs-string">"displayName"</span>: <span class="hljs-string">"Rakesh Dubbudu"</span>,
+                    <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-12T04:59:00.000Z"</span>
+                }
+            ],
+            <span class="hljs-string">"schemas"</span>: [
+                {
+                    <span class="hljs-string">"@context"</span>: <span class="hljs-string">"http://schema.org"</span>,
+                    <span class="hljs-string">"@type"</span>: <span class="hljs-string">"ClaimReview"</span>,
+                    <span class="hljs-string">"datePublished"</span>: <span class="hljs-string">"2019-09-28T13:20:56.676Z"</span>,
+                    <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://factcheck.factly.in/factcheck/factcheck-how-true-is-congress-party-claim"</span>,
+                    <span class="hljs-string">"author"</span>: {
+                        <span class="hljs-string">"@type"</span>: <span class="hljs-string">"Organization"</span>,
+                        <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://factcheck.factly.in"</span>,
+                        <span class="hljs-string">"image"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>,
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">"Factly"</span>
+                    },
+                    <span class="hljs-string">"claimReviewed"</span>: <span class="hljs-string">"There was a shortfall in government earnings in 2018-19."</span>,
+                    <span class="hljs-string">"reviewRating"</span>: {
+                        <span class="hljs-string">"@type"</span>: <span class="hljs-string">"Rating"</span>,
+                        <span class="hljs-string">"ratingValue"</span>: <span class="hljs-number">5</span>,
+                        <span class="hljs-string">"bestRating"</span>: <span class="hljs-number">5</span>,
+                        <span class="hljs-string">"worstRating"</span>: <span class="hljs-number">1</span>,
+                        <span class="hljs-string">"alternateName"</span>: <span class="hljs-string">"True"</span>,
+                        <span class="hljs-string">"image"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>
+                    },
+                    <span class="hljs-string">"itemReviewed"</span>: {
+                        <span class="hljs-string">"@type"</span>: <span class="hljs-string">"CreativeWork"</span>,
+                        <span class="hljs-string">"author"</span>: {
+                            <span class="hljs-string">"@type"</span>: <span class="hljs-string">"Organization"</span>,
+                            <span class="hljs-string">"name"</span>: <span class="hljs-string">"Government of India"</span>,
+                            <span class="hljs-string">"image"</span>: <span class="hljs-string">"https://images.degacms.com/factly.png"</span>
+                        },
+                        <span class="hljs-string">"datePublished"</span>: <span class="hljs-string">"2019-09-19T00:00:00.000Z"</span>,
+                        <span class="hljs-string">"name"</span>: <span class="hljs-string">"There was a shortfall in government earnings in 2018-19. "</span>
+                    }
+                }
+            ]
+        },
+        {
+            ...
+        },
+        ...
+    ],
+    <span class="hljs-string">"paging"</span>: {
+        <span class="hljs-string">"next"</span>: <span class="hljs-string">"eyIkdW5kZWZpbmVkIjp0cnVlfQ"</span>,
+        <span class="hljs-string">"hasNext"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"previous"</span>: <span class="hljs-string">"eyIkdW5kZWZpbmVkIjp0cnVlfQ"</span>,
+        <span class="hljs-string">"hasPrevious"</span>: <span class="hljs-literal">false</span>
+    } 
+}
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="query-parameters"></a><a href="#query-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Query Parameters</h3>
+<table>
+<thead>
+<tr><th><strong>params</strong></th><th><strong>value</strong></th><th><strong>description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>tag</td><td>string</td><td>To get factchecks of a tag</td></tr>
+<tr><td>slug</td><td>string</td><td>To get factcheck by slug</td></tr>
+<tr><td>category</td><td>string</td><td>To get factchecks of a category</td></tr>
+<tr><td>id</td><td>ObjectId</td><td>To get factchecks by object id</td></tr>
+<tr><td>claimant</td><td>string</td><td>To get factchecks of a particular claimant</td></tr>
+<tr><td>limit</td><td>number</td><td>To limit number of factchecks</td></tr>
+<tr><td>next</td><td>string</td><td>To get next factchecks</td></tr>
+<tr><td>previous</td><td>string</td><td>To get previous factchecks</td></tr>
+<tr><td>sortBy</td><td>string</td><td>To sort by field</td></tr>
+<tr><td>sortAsc</td><td>boolean</td><td>To set sort by ascending</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="get-factcheck"></a><a href="#get-factcheck" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get factcheck</h2>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/factchecks/:key</code></span></p>
+<h3><a class="anchor" aria-hidden="true" id="path-parameters"></a><a href="#path-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Path parameters</h3>
+<table>
+<thead>
+<tr><th><strong>params</strong></th><th><strong>description</strong></th></tr>
+</thead>
+<tbody>
+<tr><td>key</td><td>To get factcheck by Object Id or slug</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="get-a-by-object-id"></a><a href="#get-a-by-object-id" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get a  by Object Id</h3>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/factchecks/$factcheckId</code></span></p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"data"</span> : {
+        <span class="hljs-string">"title"</span>: <span class="hljs-string">"Fact Check: How true is Congress party’s claim?"</span>,
+        <span class="hljs-string">"introduction"</span>: <span class="hljs-string">"&lt;p&gt;introduction&lt;/p&gt;"</span>,
+        <span class="hljs-string">"summary"</span>: <span class="hljs-string">"&lt;p&gt; &lt;/p&gt;"</span>,
+        <span class="hljs-string">"excerpt"</span>: <span class="hljs-string">"Recently, Congress Party has claimed that there is a shortfall in government earnings in 2018-19."</span>,
+        <span class="hljs-string">"featured"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"sticky"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"updates"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"factcheck-how-true-is-congress-party-claim-regarding-shortfall-in-government-earnings﻿"</span>,
+        <span class="hljs-string">"claims"</span>: [
+            {
+                ....
+            }
+        ],
+        <span class="hljs-string">"tags"</span>: [],
+        <span class="hljs-string">"categories"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"status"</span>: {
+            ...
+        },
+        <span class="hljs-string">"media"</span>: {
+            ...                
+        },
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8f5e38f4f39f0001e419f0"</span>,
+        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Factcheck"</span>,
+        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+        <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:20:56.676Z"</span>,
+        <span class="hljs-string">"subTitle"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-28T13:20:56.676Z"</span>,
+        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-10-14T10:43:31.594Z"</span>,
+        <span class="hljs-string">"users"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"schemas"</span>: [
+            {
+                ...
+            }
+        ]
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="get-a-claim-by-slug"></a><a href="#get-a-claim-by-slug" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get a claim by slug</h3>
+<p><strong><span style="background-color:green; color : white; font-size : 18px"><code>GET</code></span></strong>  <span style="font-size : 18px"><code>/api/v1/factchecks/$factcheckSlug</code> </span></p>
+<pre><code class="hljs css language-js">{
+    <span class="hljs-string">"data"</span> : {
+        <span class="hljs-string">"title"</span>: <span class="hljs-string">"Fact Check: How true is Congress party’s claim?"</span>,
+        <span class="hljs-string">"introduction"</span>: <span class="hljs-string">"&lt;p&gt;introduction&lt;/p&gt;"</span>,
+        <span class="hljs-string">"summary"</span>: <span class="hljs-string">"&lt;p&gt; &lt;/p&gt;"</span>,
+        <span class="hljs-string">"excerpt"</span>: <span class="hljs-string">"Recently, Congress Party has claimed that there is a shortfall in government earnings in 2018-19."</span>,
+        <span class="hljs-string">"featured"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"sticky"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-string">"updates"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"slug"</span>: <span class="hljs-string">"factcheck-how-true-is-congress-party-claim-regarding-shortfall-in-government-earnings﻿"</span>,
+        <span class="hljs-string">"claims"</span>: [
+            {
+                ....
+            }
+        ],
+        <span class="hljs-string">"tags"</span>: [],
+        <span class="hljs-string">"categories"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"status"</span>: {
+            ...
+        },
+        <span class="hljs-string">"media"</span>: {
+            ...                
+        },
+        <span class="hljs-string">"id"</span>: <span class="hljs-string">"5d8f5e38f4f39f0001e419f0"</span>,
+        <span class="hljs-string">"class"</span>: <span class="hljs-string">"com.factly.dega.domain.Factcheck"</span>,
+        <span class="hljs-string">"clientId"</span>: <span class="hljs-string">"factly"</span>,
+        <span class="hljs-string">"publishedDate"</span>: <span class="hljs-string">"2019-09-28T13:20:56.676Z"</span>,
+        <span class="hljs-string">"subTitle"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-string">"createdDate"</span>: <span class="hljs-string">"2019-09-28T13:20:56.676Z"</span>,
+        <span class="hljs-string">"lastUpdatedDate"</span>: <span class="hljs-string">"2019-10-14T10:43:31.594Z"</span>,
+        <span class="hljs-string">"users"</span>: [
+            {
+                ...
+            }
+        ],
+        <span class="hljs-string">"schemas"</span>: [
+            {
+                ...
+            }
+        ]
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/dega-docs/docs/claim"><span class="arrow-prev">← </span><span>Claims</span></a><a class="docs-next button" href="/dega-docs/docs/format"><span>Formats</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#get-factchecks">Get factchecks</a><ul class="toc-headings"><li><a href="#query-parameters">Query Parameters</a></li></ul></li><li><a href="#get-factcheck">Get factcheck</a><ul class="toc-headings"><li><a href="#path-parameters">Path parameters</a></li><li><a href="#get-a-by-object-id">Get a  by Object Id</a></li><li><a href="#get-a-claim-by-slug">Get a claim by slug</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/dega-docs/" class="nav-home"><img src="/dega-docs/img/dega.svg" alt="Dega" width="66" height="58"/></a><div><h5>Docs</h5><a href="/dega-docs/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/dega-docs/docs/en/doc2.html">Guides (or other categories)</a><a href="/dega-docs/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="https://github.com/">GitHub</a></div></section><section class="copyright">Copyright © 2019 Factly</section></footer></div></body></html>
