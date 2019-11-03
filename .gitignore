@@ -20,6 +20,11 @@ out/
 ######################
 website/build
 
+######################
+# System Files
+######################
+.DS_Store
+
 # Logs
 logs
 *.log

@@ -21,39 +21,36 @@
 ];*/
 
 const siteConfig = {
-  title: 'Dega', // Title for your website.
-  tagline: 'Open source platform for publishing fact checks',
-  url: 'https://degacms.com', // Your website URL
-  baseUrl: '', // Base URL for your project */
+  title: "Dega", // Title for your website.
+  tagline: "Open source platform for publishing fact checks",
+  url: "https://degacms.com", // Your website URL
+  baseUrl: "/", // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'dega',
-  organizationName: 'factly',
+  projectName: "dega",
+  organizationName: "factly",
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [
-    {doc: 'intro', label: 'Docs'},
-    {doc: 'api', label: 'API'},
-  ],
+  headerLinks: [{ doc: "intro", label: "Docs" }, { doc: "api", label: "API" }],
 
   // If you have users set above, you add it here:
   //users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/dega.svg',
-  footerIcon: 'img/dega.svg',
-  favicon: 'img/favicon.ico',
+  headerIcon: "img/dega.svg",
+  footerIcon: "img/dega.svg",
+  favicon: "img/favicon.ico",
 
   /* Colors for website */
   colors: {
-    primaryColor: '#57869d',
-    secondaryColor: '#3c5d6d',
+    primaryColor: "#57869d",
+    secondaryColor: "#3c5d6d"
   },
 
   /* Custom fonts for website */
@@ -75,22 +72,22 @@ const siteConfig = {
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
-    theme: 'default',
+    theme: "default"
   },
 
   // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ["https://buttons.github.io/buttons.js"],
 
   // On page navigation for the current documentation page.
-  onPageNav: 'separate',
+  onPageNav: "separate",
   // No .html extensions for paths.
   cleanUrl: true,
 
   editUrl: "https://github.com/factly/dega-docs/tree/md/docs/",
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/undraw_online.svg',
-  twitterImage: 'img/undraw_tweetstorm.svg',
+  ogImage: "img/undraw_online.svg",
+  twitterImage: "img/undraw_tweetstorm.svg"
 
   // For sites with a sizable amount of content, set collapsible to true.
   // Expand/collapse the links and subcategories under categories.

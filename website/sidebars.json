@@ -3,24 +3,22 @@
     "Introduction": ["intro"]
   },
   "docs-other": {
-    "Intro" : ["api"],
+    "Intro": ["api"],
     "Endpoints": [
-      "category", 
-      "claimant", 
-      "claim", 
-      "factcheck", 
-      "format" , 
-      "organization", 
-      "post", 
-      "rating", 
+      "category",
+      "claimant",
+      "claim",
+      "factcheck",
+      "format",
+      "organization",
+      "post",
+      "rating",
       "role",
       "sitemap",
       "status",
       "tag",
       "user"
     ],
-    "Errors" : [
-      "error"
-    ]
+    "Errors": ["error"]
   }
 }
