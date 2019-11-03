@@ -15,6 +15,11 @@ out/
 ######################
 .vscode/
 
+######################
+# Build directory
+######################
+website/build
+
 # Logs
 logs
 *.log
