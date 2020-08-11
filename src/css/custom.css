@@ -1,0 +1,183 @@
+@import url(fragments.css);
+@import url(searchbox.css);
+
+:root {
+  --ifm-font-size-base: 16px;
+  --ifm-code-font-size: 90%;
+  --ifm-background-color: var(--white);
+  --ifm-color-primary: var(--nebula-blue);
+  --ifm-footer-background-color: var(--moon-grey);
+  --ifm-menu-color-background-active: var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='dark'] {
+  --ifm-font-base-color: #dee0f2;
+  --ifm-navbar-link-hover-color: #8b9dff;
+  --ifm-link-color: #8b9dff;
+  --ifm-menu-color-active: #8b9dff;
+  --ifm-background-color: #0a141c;
+  --ifm-footer-background-color: #0a141c;
+  --ifm-navbar-background-color: #21243d;
+  --ifm-menu-color-background-active: #21243d;
+}
+
+#hero {
+  background-image: linear-gradient(
+    var(--ifm-navbar-background-color),
+    var(--ifm-footer-background-color)
+  );
+}
+
+html[data-theme='dark'] #hero {
+  background-image: linear-gradient(
+    var(--ifm-background-color),
+    var(--ifm-navbar-background-color)
+  );
+}
+
+.docsearch-logo {
+  color: #21243d;
+}
+
+html[data-theme='dark'] .docsearch-logo {
+  color: #fff;
+}
+
+html[data-theme='dark'] div[class*='background-curves-Hero'] {
+  opacity: 0.4;
+}
+
+html[data-theme='dark'] .bg-analytics::after {
+  opacity: 0.1;
+}
+
+html[data-theme='dark'] .uil-bgc-white {
+  background-color: var(--ifm-background-color);
+}
+
+html[data-theme='dark'] .uil-bgc-moon {
+  background-color: var(--ifm-navbar-background-color);
+}
+
+html[data-theme='dark'] .uil-color-solstice {
+  color: var(--ifm-font-base-color);
+}
+
+html[data-theme='dark'] .uil-color-telluric {
+  color: var(--ifm-font-base-color);
+}
+
+html[data-theme='dark'] .react-toggle-track {
+  background-color: var(--ifm-footer-background-color);
+}
+
+html[data-theme='dark'] img.ds-icon {
+  filter: invert();
+}
+
+html[data-theme='dark'] img.github__logo {
+  filter: none;
+}
+html:not([data-theme='dark']) img.github__logo {
+  filter: invert();
+}
+
+html[data-theme='dark'] [class*='light-Card'] {
+  -webkit-transition: -webkit-transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  -webkit-transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  background-image: radial-gradient(circle at 50% 0, #3a416f, #21243d);
+}
+
+.footer .footer__logo {
+  max-width: 6rem;
+}
+
+.docSidebarContainer_node_modules-\@docusaurus-theme-classic-src-theme-DocPage- {
+  background-color: var(--ifm-background-color);
+  background-image: linear-gradient(
+    90deg,
+    var(--ifm-background-color) 95%,
+    var(--ifm-footer-background-color)
+  );
+  border: none;
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.75);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.75);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(0.75);
+  }
+}
+.ds-icon-heart {
+  margin-left: 1em;
+  margin-right: 1em;
+  animation: heartbeat 1s infinite;
+  transform-origin: center;
+}
+
+.ais-SearchBox {
+  width: 100%;
+  height: 1.5rem;
+}
+.ais-SearchBox-input {
+  width: 90%;
+}
+.ais-SearchBox-input,
+.ais-SearchBox-form {
+  height: 100%;
+  min-height: 100%;
+  width: 80%;
+  min-width: 80%;
+}
+.ais-SearchBox-form button {
+  width: 10%;
+}
+input.ais-SearchBox-input {
+  -webkit-appearance: none !important;
+  display: inline-block;
+  transition: box-shadow 0.4s ease, background 0.4s ease;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px #cccccc;
+  background: #ffffff;
+  padding: 0;
+  padding-right: 77px;
+  padding-left: 11px;
+  vertical-align: middle;
+  white-space: normal;
+  font-size: inherit;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input.ais-SearchBox-input:hover {
+  box-shadow: inset 0 0 0 1px #b3b3b3;
+  box-sizing: border-box;
+}
+
+.ais-SearchBox-form {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
+}
+
+/* DocSearch v3 */
+
+.DocSearch-Modal {
+  width: 100%;
+}
