@@ -181,3 +181,7 @@ input.ais-SearchBox-input:hover {
 .DocSearch-Modal {
   width: 100%;
 }
+/* Disabling join the program link */
+#hero a {
+  pointer-events: none;
+}

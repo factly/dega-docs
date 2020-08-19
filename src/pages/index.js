@@ -27,13 +27,13 @@ function Home() {
       <Hero
         id="hero"
         background="curves"
-        title={<DegaLogo width="50%" />}
+        title={<DegaLogo width="25%" />}
         subtitle={siteConfig.tagline}
         cta={[
           <Button
             primary
             style={{ textDecoration: 'none' }}
-            href={useBaseUrl('/apply')}
+            href={useBaseUrl('/')}
           >
             Join the Program
           </Button>,
