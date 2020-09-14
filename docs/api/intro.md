@@ -1,5 +1,5 @@
 ---
-id: Intro
+id: intro
 title: Intro
 ---
 To get started with dega api go through all the end points.

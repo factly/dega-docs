@@ -37,10 +37,10 @@ module.exports = {
       links: [
         {
           label: 'Documentation',
-          to: 'docs/at-a-glance',
+          to: 'docs/what-is-dega',
           position: 'right',
         },
-        {label:'API',to:'docs/intro',position:'right'},
+        {label:'API',to:'docs/api/intro',position:'right'},
         {
           label: 'GitHub',
           href: 'https://github.com/factly',

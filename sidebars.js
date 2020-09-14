@@ -1,19 +1,31 @@
 
 module.exports = {
   docs: {
-    Intro:[
-      'at-a-glance'
+    'Getting Started':[
+      'what-is-dega'
     ]
   },
   api:{
     Intro:[
-      'Intro'
+      'api/intro'
     ],
     Endpoints:[
-      'category','claimant','claim','factcheck','format','organization','post','rating','role','sitemap','status','tag','user'
+      'api/category',
+      'api/claimant',
+      'api/claim',
+      'api/factcheck',
+      'api/format',
+      'api/organization',
+      'api/post',
+      'api/rating',
+      'api/role',
+      'api/sitemap',
+      'api/status',
+      'api/tag',
+      'api/user'
     ],
     Errors:[
-      'error'
+      'api/error'
     ]
   },
 

@@ -1,7 +1,7 @@
 ---
-id: at-a-glance
-title: Dega at a Glance
-sidebar_label: Dega at a Glance
+id: what-is-dega
+title: What is Dega?
+sidebar_label: What is Dega?
 ---
 
 ## About
