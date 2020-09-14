@@ -62,8 +62,8 @@ module.exports = {
               to: 'https://factly.in/about',
             },
             {
-              label: 'FAQ',
-              to: 'docs/faq',
+              label: 'Contact',
+              to: 'mailto:admin@factly.in',
             },
             {
               label: 'Privacy Policy',
@@ -90,10 +90,6 @@ module.exports = {
               label: 'Instagram',
               to: 'https://www.instagram.com/factlyindia',
             },
-            {
-              label: 'Contact',
-              to: 'mailto:admin@factly.in',
-            },
           ],
         },
         {
@@ -115,10 +111,10 @@ module.exports = {
               label: 'Dega Admin Portal',
               href: 'https://github.com/factly/dega-admin-portal',
             },
-            {
-              label: 'Dega Themes',
-              href: 'https://github.com/factly/dega-themes',
-            },
+            // {
+            //   label: 'Dega Themes',
+            //   href: 'https://github.com/factly/dega-themes',
+            // },
           ],
         },
         {
@@ -129,8 +125,12 @@ module.exports = {
               to: 'docs/what-is-dega',
             },
             {
+              label: 'FAQ',
+              to: 'docs/faq',
+            },
+            {
               label: 'API',
-              to: 'docs/api/intro',
+              to: 'https://degacms.com/docs/api/intro',
             },
             {
               label: 'Blog',
