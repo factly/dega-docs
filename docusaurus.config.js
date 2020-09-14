@@ -43,7 +43,7 @@ module.exports = {
         {label:'API',to:'docs/api/intro',position:'right'},
         {
           label: 'GitHub',
-          href: 'https://github.com/factly',
+          href: 'https://github.com/factly/dega',
           position: 'right',
         },
       ],
@@ -51,65 +51,23 @@ module.exports = {
     footer: {
       links: [
         {
-          title: 'Docs',
+          title: 'About',
           items: [
             {
-              label: 'Getting Started',
-              to: 'docs/at-a-glance',
+              label: 'Factly Media & Research',
+              to: 'https://factly.in',
+            },
+            {
+              label: 'About Us',
+              to: 'https://factly.in/about',
             },
             {
               label: 'FAQ',
               to: 'docs/faq',
             },
             {
-              label: 'DocSearch.js',
-              to: 'docs/dropdown',
-            },
-            {
-              label: 'Run your own scraper',
-              to: 'docs/run-your-own',
-            },
-            {
-              label: 'Playground',
-              to: 'playground',
-            },
-          ],
-        },
-        {
-          title: 'Factly',
-          items: [
-            {
-              label: 'Issues',
-              to: 'https://github.com/algolia/docsearch/issues',
-            },
-            {
-              label: 'Scraper',
-              to: 'https://github.com/algolia/docsearch-scraper',
-            },
-            {
-              label: 'Configurations',
-              to: 'https://github.com/algolia/docsearch-configs',
-            },
-            {
-              label: 'Privacy',
+              label: 'Privacy Policy',
               to: 'docs/privacy-policy',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Apply',
-              to: 'apply',
-            },
-            {
-              label: 'Forum',
-              href: 'https://discourse.algolia.com/tags/docsearch',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/tXdr5mP',
             },
           ],
         },
@@ -117,16 +75,66 @@ module.exports = {
           title: 'Social',
           items: [
             {
-              label: 'GitHub',
-              to: 'https://github.com/algolia/docsearch',
+              label: 'Github',
+              to: 'https://github.com/factly',
+            },
+            {
+              label: 'Facebook',
+              to: 'https://facebook.com/factlyindia',
             },
             {
               label: 'Twitter',
-              to: 'https://twitter.com/docsearch_',
+              to: 'https://twitter.com/factlyindia',
             },
             {
-              label: 'Algolia Blog',
-              to: 'https://blog.algolia.com/',
+              label: 'Instagram',
+              to: 'https://www.instagram.com/factlyindia',
+            },
+            {
+              label: 'Contact',
+              to: 'mailto:admin@factly.in',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Slack',
+              to: 'https://factly.slack.com/',
+            },
+            {
+              label: 'Dega',
+              href: 'https://github.com/factly/dega',
+            },
+            {
+              label: 'Dega Server',
+              href: 'https://github.com/factly/dega-server',
+            },
+            {
+              label: 'Dega Admin Portal',
+              href: 'https://github.com/factly/dega-admin-portal',
+            },
+            {
+              label: 'Dega Themes',
+              href: 'https://github.com/factly/dega-themes',
+            },
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
+            {
+              label: 'Guides',
+              to: 'docs/what-is-dega',
+            },
+            {
+              label: 'API',
+              to: 'docs/api/intro',
+            },
+            {
+              label: 'Blog',
+              to: 'docs/blogs',
             },
           ],
         },

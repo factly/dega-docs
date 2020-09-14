@@ -2,6 +2,7 @@
 id: what-is-dega
 title: What is Dega?
 sidebar_label: What is Dega?
+slug: /
 ---
 
 ## About
