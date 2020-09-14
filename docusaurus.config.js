@@ -76,7 +76,7 @@ module.exports = {
           ],
         },
         {
-          title: 'DocSearch',
+          title: 'Factly',
           items: [
             {
               label: 'Issues',
@@ -92,7 +92,7 @@ module.exports = {
             },
             {
               label: 'Privacy',
-              to: 'https://www.algolia.com/policies/privacy/',
+              to: 'docs/privacy-policy',
             },
           ],
         },
@@ -135,7 +135,7 @@ module.exports = {
         alt: 'Dega',
         src: 'img/dega.svg',
       },
-      copyright: `&copy; Dega 2020`,
+      copyright: `&copy; Factly Media & Research 2020`,
     }
   },
   presets: [
