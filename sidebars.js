@@ -2,8 +2,29 @@
 module.exports = {
   docs: {
     'Getting Started':[
-      'what-is-dega'
-    ]
+      'what-is-dega',
+      'dega-for-fact-checking',
+      'quickstart',
+      'installation',
+    ],
+    Ecosystem:[
+      'projects',
+      'architecture',
+      'philosophy',
+      'roadmap',
+    ],
+    Concepts:[
+      'organisation',
+      'user',
+      'space',
+      'policy',
+      'post',
+      'format',
+      'category',
+      'tag',
+      'media',
+      'search',
+    ],
   },
   api:{
     Intro:[

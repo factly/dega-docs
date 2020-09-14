@@ -1,11 +1,10 @@
 ---
-id: what-is-dega
-title: What is Dega?
-sidebar_label: What is Dega?
-slug: /
+id: dega-for-fact-checking
+title: Dega for Fact Checking
+sidebar_label: Dega for Fact Checking
 ---
 
-## About
+## Fact Checking
 
 With so much information being published around every day, we just do not know what to trust. Coupled with this is the rise of Misinformation (Fake News). In the recent years, ‘Fact Checking’ has emerged as a powerful solution to the Misinformation problem. But the existing publishing platforms do not enable seamless publishing of fact-check stories that comply with the best practices of the ‘fact-checking’ ecosystem. The upside is that there is no problem that doesn’t have a solution.
 
