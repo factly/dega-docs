@@ -88,7 +88,9 @@ html[data-theme='dark'] [class*='light-Card'] {
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
   background-image: radial-gradient(circle at 50% 0, #3a416f, #21243d);
 }
-
+.footer {
+  position: relative;
+}
 .footer .footer__logo {
   max-width: 6rem;
 }
