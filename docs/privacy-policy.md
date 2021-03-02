@@ -3,7 +3,7 @@ id: privacy-policy
 title: Privacy Policy for Factly Media & Research
 ---
 
-<p>At Factly Media &amp; Research, accessible from https://degacms.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Factly Media &amp; Research and how we use it.</p>
+<p>At Factly Media &amp; Research, accessible from https://factly.in, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Factly Media &amp; Research and how we use it.</p>
 
 <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 

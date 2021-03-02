@@ -56,14 +56,16 @@ module.exports = {
             {
               label: 'Factly Media & Research',
               to: 'https://factly.in',
+              target: '_blank',
             },
             {
               label: 'About Us',
               to: 'https://factly.in/about',
+              target: '_blank',
             },
             {
               label: 'Contact',
-              to: 'mailto:admin@factly.in',
+              href: 'mailto:admin@factly.in',
             },
             {
               label: 'Privacy Policy',
@@ -77,18 +79,22 @@ module.exports = {
             {
               label: 'Github',
               to: 'https://github.com/factly',
+              target: '_blank',
             },
             {
               label: 'Facebook',
               to: 'https://facebook.com/factlyindia',
+              target: '_blank',
             },
             {
               label: 'Twitter',
               to: 'https://twitter.com/factlyindia',
+              target: '_blank',
             },
             {
               label: 'Instagram',
               to: 'https://www.instagram.com/factlyindia',
+              target: '_blank',
             },
           ],
         },
@@ -97,23 +103,28 @@ module.exports = {
           items: [
             {
               label: 'Slack',
-              to: 'https://factly.slack.com/',
+              to: 'https://slack.factly.org/',
+              target: '_blank',
             },
             {
               label: 'Dega',
               href: 'https://github.com/factly/dega',
+              target: '_blank',
             },
             {
               label: 'Dega Server',
               href: 'https://github.com/factly/dega-server',
+              target: '_blank',
             },
             {
-              label: 'Dega Admin Portal',
-              href: 'https://github.com/factly/dega-admin-portal',
+              label: 'Dega Studio',
+              href: 'https://github.com/factly/dega-studio',
+              target: '_blank',
             },
             // {
             //   label: 'Dega Themes',
             //   href: 'https://github.com/factly/dega-themes',
+            //   target: '_blank',
             // },
           ],
         },
@@ -130,12 +141,12 @@ module.exports = {
             },
             {
               label: 'API',
-              to: 'https://degacms.com/docs/api/intro',
+              to: 'docs/api/intro',
             },
-            {
-              label: 'Blog',
-              to: 'docs/blogs',
-            },
+            // {
+            //   label: 'Blog',
+            //   to: 'docs/blogs',
+            // },
           ],
         },
       ],
@@ -143,7 +154,7 @@ module.exports = {
         alt: 'Dega',
         src: 'img/dega.svg',
       },
-      copyright: `&copy; Factly Media & Research 2020`,
+      copyright: `Copyright © ${new Date().getFullYear()} Factly Media & Research.`,
     }
   },
   presets: [
